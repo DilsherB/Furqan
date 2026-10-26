@@ -23,38 +23,84 @@ function renderCatalogue(dataToRender = CATALOGUE_DATA) {
     container.innerHTML = dataToRender
       .map(
         (item) => `
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200/90 hover:border-emerald-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between">
-                        <div>
-                            <div class="relative h-48 overflow-hidden">
-                                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
-                                <span class="absolute top-3 left-3 bg-navy-950/85 text-emerald-400 font-mono text-[11px] px-2.5 py-1 rounded-md font-bold backdrop-blur-sm">
-                                    HS: ${item.hsCode}
-                                </span>
-                                <span class="absolute top-3 right-3 bg-white/90 text-navy-900 text-[10px] px-2.5 py-1 rounded-full font-extrabold shadow">
-                                    ${item.origin}
-                                </span>
-                            </div>
-                            <div class="p-5">
-                                <span class="text-[10px] font-extrabold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-0.5 rounded">${item.id}</span>
-                                <h3 class="text-lg font-bold text-navy-900 mt-1.5 mb-2 line-clamp-1">${item.name}</h3>
-                                <p class="text-slate-600 text-xs mb-4 line-clamp-2 leading-relaxed">${item.summary}</p>
-                                
-                                <div class="space-y-1.5 border-t border-slate-100 pt-3 text-xs text-slate-600">
-                                    <div class="flex justify-between"><span class="text-slate-400">MOQ:</span> <span class="font-bold text-slate-800">${item.moq}</span></div>
-                                    <div class="flex justify-between"><span class="text-slate-400">Grade:</span> <span class="font-semibold text-slate-700">${item.grade}</span></div>
+                    
+                    <div class="relative min-h-[520px] rounded-2xl overflow-hidden shadow-lg border border-slate-200/90 hover:border-emerald-500/50 transition-all hover:-translate-y-1 group">
+
+                        <!-- Full-card background image -->
+                        <img
+                            src="${item.image}"
+                            alt="${item.name}"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        >
+
+                        <!-- Dark gradient over image -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-slate-950/20"></div>
+
+                        <!-- HS Code -->
+                        <span class="absolute top-3 left-3 z-20 bg-navy-950/85 text-emerald-400 font-mono text-[11px] px-2.5 py-1 rounded-md font-bold backdrop-blur-sm">
+                            HS: ${item.hsCode}
+                        </span>
+
+                        <!-- Origin -->
+                        <span class="absolute top-3 right-3 z-20 bg-white/90 text-navy-900 text-[10px] px-2.5 py-1 rounded-full font-extrabold shadow">
+                            ${item.origin}
+                        </span>
+
+                        <!-- Details panel over the image -->
+                        <div class="absolute bottom-0 left-0 right-0 z-10 bg-slate-950/35 border-t border-white/20">
+
+                        <!-- Product details -->
+                        <div class="p-5 pb-4">
+
+                            <span class="text-[10px] font-extrabold text-emerald-300 uppercase tracking-widest bg-emerald-400/15 px-2 py-0.5 rounded">
+                                ${item.id}
+                            </span>
+
+                            <h3 class="text-lg font-bold text-white mt-2 mb-2 line-clamp-1">
+                                ${item.name}
+                            </h3>
+
+                            <p class="text-white/80 text-xs mb-4 line-clamp-2 leading-relaxed">
+                                ${item.summary}
+                            </p>
+
+                                <div class="space-y-1.5 border-t border-white/20 pt-3 text-xs text-white/80">
+                                    <div class="flex justify-between">
+                                        <span class="text-white/60">MOQ:</span>
+                                        <span class="font-bold text-white">${item.moq}</span>
+                                    </div>
+
+                                    <div class="flex justify-between">
+                                        <span class="text-white/60">Grade:</span>
+                                        <span class="font-semibold text-white">${item.grade}</span>
+                                    </div>
                                 </div>
-                            </div>
+
                         </div>
 
-                        <div class="p-5 pt-0 grid grid-cols-2 gap-2 border-t border-slate-100/60 mt-2">
-                            <button onclick="openSpecModal('${item.id}')" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
-                                <i class="fa-solid fa-circle-info text-emerald-600"></i> Specs
+                            <!-- Action buttons: separate section -->
+                            <div class="px-5 py-3 grid grid-cols-2 gap-2 border-t border-white/20 bg-slate-950/25">
+
+                            <button
+                                onclick="openSpecModal('${item.id}')"
+                                class="w-full py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+                            >
+                                <i class="fa-solid fa-circle-info text-emerald-400"></i>
+                                Specs
                             </button>
-                            <button onclick="addToCart('${item.id}')" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
-                                <i class="fa-solid fa-plus"></i> Add Cart
+
+                            <button
+                                onclick="addToCart('${item.id}')"
+                                class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                                Add Cart
                             </button>
+
                         </div>
                     </div>
+                </div>
+
                 `,
       )
       .join("");
@@ -106,12 +152,12 @@ function setCatalogueView(view) {
     gridBtn.className =
       "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-navy-900 text-white";
     listBtn.className =
-      "px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-navy-900 transition-all";
+      "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-navy-900";
   } else {
     listBtn.className =
       "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-navy-900 text-white";
     gridBtn.className =
-      "px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-navy-900 transition-all";
+      "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-navy-900";
   }
   filterCatalogue();
 }

@@ -18,7 +18,7 @@ const CATALOGUE_DATA = [
           certs: ["ISO 9001:2015", "OEKO-TEX Standard 100", "BSCI Certified"],
         },
         {
-          id: "FE-AGR-01",
+          id: "EG-AGR-01",
           name: "1121 Super Kernel Basmati Rice",
           category: "agri",
           hsCode: "1006.30",
@@ -36,7 +36,7 @@ const CATALOGUE_DATA = [
           certs: ["Phytosanitary Cert", "ISO 22000 HACCP", "Halal Certified"],
         },
         {
-          id: "FE-LTH-01",
+          id: "EG-JKT-01",
           name: "Full-Grain Leather Outerwear & Gloves",
           category: "leather",
           hsCode: "4203.10",
@@ -46,7 +46,7 @@ const CATALOGUE_DATA = [
           image:
             "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800",
           summary:
-            "Genuine drum-dyed leather jackets, motorcycling apparel, and industrial safety driver gloves.",
+            "Genuine drum-dyed leather jackets, motorcycling apparel, and industrial saEGty driver gloves.",
           material: "100% Top-Grain Cowhide / Sheep Napa Leather",
           packaging: "Hanger Polybag Export Cartons",
           leadTime: "25 - 30 Business Days",
@@ -54,7 +54,7 @@ const CATALOGUE_DATA = [
           certs: ["REACH Compliant", "ISO 14001 Tanning Standards"],
         },
         {
-          id: "FE-AGR-02",
+          id: "EG-AGR-02",
           name: "Pure Himalayan Pink Salt (Gourmet & Lumps)",
           category: "agri",
           hsCode: "2501.00",
@@ -72,7 +72,7 @@ const CATALOGUE_DATA = [
           certs: ["FDA Registered", "GMP+", "Kosher & Halal"],
         },
         {
-          id: "FE-IND-01",
+          id: "EG-IND-01",
           name: "Precision Surgical & Dental Steel Instruments",
           category: "industrial",
           hsCode: "9018.90",
@@ -90,7 +90,7 @@ const CATALOGUE_DATA = [
           certs: ["CE Mark", "ISO 13485 Medical", "FDA Compliant"],
         },
         {
-          id: "FE-PKG-01",
+          id: "EG-PKG-01",
           name: "Eco Industrial Jute & Woven Poly Bags",
           category: "packaging",
           hsCode: "6305.10",
@@ -108,7 +108,7 @@ const CATALOGUE_DATA = [
           certs: ["ISO 14001 Environmental", "UN Hazardous Freight Certified"],
         },
         {
-          id: "FE-TXT-02",
+          id: "EG-TXT-02",
           name: "Industrial Denim Fabrics & Garments",
           category: "textile",
           hsCode: "5209.42",
@@ -116,9 +116,9 @@ const CATALOGUE_DATA = [
           origin: "Pakistan Hub",
           grade: "8 oz to 14 oz Rigid & Stretch",
           image:
-            "https://images.unsplash.com/photo-1542272604-780c36856d66?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1616628180910-1f3e5c8b6f2e?auto=format&fit=crop&q=80&w=800",
           summary:
-            "Premium indigo denim fabrics, heavy workwear jeans, and flame-retardant safety overalls.",
+            "Premium indigo denim fabrics, heavy workwear jeans, and flame-retardant saEGty overalls.",
           material: "98% Cotton 2% Elastane / 100% Ring Cotton",
           packaging: "Roll Packing on Heavy Tubes with Poly Wrap",
           leadTime: "25 Business Days",
@@ -126,7 +126,7 @@ const CATALOGUE_DATA = [
           certs: ["ISO 9001", "OEKO-TEX Made in Green"],
         },
         {
-          id: "FE-AGR-03",
+          id: "EG-AGR-03",
           name: "Organic Red Chillies & Turmeric Roots",
           category: "agri",
           hsCode: "0904.21",
@@ -143,4 +143,22 @@ const CATALOGUE_DATA = [
           port: "Karachi Port (PKGI)",
           certs: ["Phytosanitary Cert", "Organic USDA"],
         },
+        {
+          id: "EG-GLV-03",
+          name: "Leather Driving Gloves & Work Gloves",
+          category: "leather",
+          hsCode: "4203.29.90",
+          moq: "300 pairs per style/color",
+          origin: "Pakistan Hub",
+          grade: "clean stitching, uniform grain, precise perforations",
+          image:
+            "catalogue-images/leather driving gloves.jpg",
+          summary:
+            "A premium dual-product commercial showcase featuring customized, corporate-branded leather gloves designed for luxury driving (brown) and durable utility wear (black), complete with matching retail packaging.",
+          material: "Genuine Cowhide, Sheepskin, or Goatskin leather with reinforced stitching and breathable lining",
+          packaging: "Premium rigid cardboard gift presentation box with foam inserts and protective tissue wrap",
+          leadTime: "Air: 5-9 Business Days, Sea: 25-35 Business Days",
+          port: "Karachi Port (PKGI)",
+          certs: ["CE Marking, EN 420, LWG"],
+        }
       ];
